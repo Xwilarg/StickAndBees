@@ -1,13 +1,12 @@
 [gd_scene format=3 uid="uid://rrg628deuang"]
 
-[ext_resource type="Texture2D" uid="uid://cnonn6m0whjs4" path="res://icon.svg" id="1_eouaw"]
+[ext_resource type="Texture2D" uid="uid://kwmrlc35f1aj" path="res://game/sprites/Bee.png" id="1_eouaw"]
 [ext_resource type="Script" uid="uid://cvlrpswi813yw" path="res://scripts/controller/bee.gd" id="2_d5jp7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_riqys"]
-radius = 335.82
+radius = 1024.0
 
 [node name="Bee" type="Sprite2D" unique_id=1664250955]
-scale = Vector2(5, 5)
 texture = ExtResource("1_eouaw")
 script = ExtResource("2_d5jp7")
 
@@ -15,4 +14,5 @@ script = ExtResource("2_d5jp7")
 scale = Vector2(0.19999999, 0.19999999)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=900958761]
+position = Vector2(-159, 246)
 shape = SubResource("CircleShape2D_riqys")
