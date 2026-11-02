@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 		angular_velocity += pushForce * pushTimer
 
 	if end.global_position.y < -5000 && abs(end.global_position.x) < 50.0:
-		GameManager.go_to_shop()
+		GameManager.die("You got the honey!")
 
 	rot += mov.x * deg_to_rad * 1.0
 	angular_velocity = rot
