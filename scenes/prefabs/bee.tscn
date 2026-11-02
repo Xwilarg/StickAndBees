@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://kwmrlc35f1aj" path="res://game/sprites/Bee.png" id="1_eouaw"]
 [ext_resource type="Script" uid="uid://cvlrpswi813yw" path="res://scripts/controller/bee.gd" id="2_d5jp7"]
+[ext_resource type="PackedScene" uid="uid://badm47f3mc32m" path="res://scenes/impact_frames.tscn" id="3_d5jp7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_riqys"]
 radius = 214.4
@@ -21,4 +22,9 @@ position = Vector2(-24.00003, 35.00003)
 rotation = -0.16545127
 shape = SubResource("CircleShape2D_riqys")
 
+[node name="ImpactFrames" parent="." unique_id=1699899615 instance=ExtResource("3_d5jp7")]
+visible = false
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+
+[editable path="ImpactFrames"]

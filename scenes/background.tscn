@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://s07dysg4f4i8" path="res://game/sprites/Sky.png" id="1_y0upk"]
 [ext_resource type="Texture2D" uid="uid://cofawm074w7jm" path="res://game/sprites/Cloud.png" id="2_cbsqf"]
 [ext_resource type="Texture2D" uid="uid://c1gsgilci4tnr" path="res://game/sprites/Tree.png" id="2_jougr"]
+[ext_resource type="Texture2D" uid="uid://ch0fuvninb3ch" path="res://game/sprites/Inferno.png" id="3_wax1t"]
+[ext_resource type="Texture2D" uid="uid://du3gxeyaage22" path="res://game/sprites/Bubble.png" id="4_1tmhi"]
 [ext_resource type="Texture2D" uid="uid://b5fq03hvfqyyi" path="res://game/sprites/Flower1.png" id="4_wisxt"]
 [ext_resource type="Texture2D" uid="uid://kign3s4rfj7k" path="res://game/sprites/Flower2.png" id="5_wax1t"]
 
@@ -35,6 +37,61 @@ texture = ExtResource("2_cbsqf")
 position = Vector2(864.11945, -376.9647)
 scale = Vector2(0.3523881, 0.3523881)
 texture = ExtResource("2_cbsqf")
+
+[node name="Inferno" type="Sprite2D" parent="Sky" unique_id=1108853008]
+position = Vector2(70.281876, 2479.2856)
+scale = Vector2(0.9798173, 0.9798173)
+texture = ExtResource("3_wax1t")
+
+[node name="Bubble" type="Sprite2D" parent="Sky" unique_id=62475015]
+position = Vector2(54.95227, -2395.525)
+scale = Vector2(0.60607195, 0.60607195)
+texture = ExtResource("4_1tmhi")
+
+[node name="Bubble2" type="Sprite2D" parent="Sky" unique_id=1903022964]
+position = Vector2(-501.29297, -2682.4072)
+scale = Vector2(0.68608963, 0.7327916)
+texture = ExtResource("4_1tmhi")
+
+[node name="Bubble3" type="Sprite2D" parent="Sky" unique_id=948332707]
+position = Vector2(129.41028, -3164.1943)
+scale = Vector2(0.9019637, 0.96336013)
+texture = ExtResource("4_1tmhi")
+
+[node name="Bubble4" type="Sprite2D" parent="Sky" unique_id=1242465945]
+position = Vector2(-619.54974, -3626.2722)
+scale = Vector2(1.0263104, 1.0961711)
+texture = ExtResource("4_1tmhi")
+
+[node name="Bubble5" type="Sprite2D" parent="Sky" unique_id=937029413]
+position = Vector2(847.7111, -2088.933)
+scale = Vector2(0.645294, 0.689219)
+texture = ExtResource("4_1tmhi")
+
+[node name="Bubble6" type="Sprite2D" parent="Sky" unique_id=183918531]
+position = Vector2(-376.46625, -1758.252)
+scale = Vector2(0.3964498, 0.42343605)
+texture = ExtResource("4_1tmhi")
+
+[node name="Bubble7" type="Sprite2D" parent="Sky" unique_id=24778368]
+position = Vector2(536.73944, -4112.4395)
+scale = Vector2(0.62125796, 0.66354686)
+texture = ExtResource("4_1tmhi")
+
+[node name="Bubble8" type="Sprite2D" parent="Sky" unique_id=1932477643]
+position = Vector2(-431.21484, -4574.5166)
+scale = Vector2(0.9834061, 1.0503464)
+texture = ExtResource("4_1tmhi")
+
+[node name="Bubble9" type="Sprite2D" parent="Sky" unique_id=359777780]
+position = Vector2(1062.3253, -3356.9087)
+scale = Vector2(0.5427987, 0.5797469)
+texture = ExtResource("4_1tmhi")
+
+[node name="Bubble10" type="Sprite2D" parent="Sky" unique_id=527465666]
+position = Vector2(617.76715, -2907.9717)
+scale = Vector2(0.53173023, 0.56792504)
+texture = ExtResource("4_1tmhi")
 
 [node name="Tree" type="Sprite2D" parent="." unique_id=1030912895]
 position = Vector2(610.90704, 295.87613)

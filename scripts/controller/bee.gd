@@ -7,6 +7,8 @@ var speed: float = 50.0
 var start_pos: Vector2
 var is_good_throw: bool
 var break_pause: float
+@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var impact_frames: AnimatedSprite2D = $ImpactFrames
 
 func _process(delta: float) -> void:
 	if GameManager.curr_state == GameManager.game_state.WAITING_FOR_INPUT or GameManager.is_paused:
@@ -53,13 +55,20 @@ func _on_body_entered(body: Node) -> void:
 	if vel > 0: dir.x = abs(dir.x)
 	else: dir.x = -abs(dir.x)
 	if speed > 10_000 && dir.y < 0 and cam.target == null: # Great throw!
+		sprite_2d.hide()
 		stick.is_enabled = false
 		cam.target = self
 		start_pos = global_position
 		timer = 3.0
 		is_good_throw = true
+		impact_frames.show()
+		impact_frames.scale = Vector2.ONE * 4
+		impact_frames.play("default")
 		break_pause = 0.5
 		stick.break_pause = 0.5
 	else:
 		timer = 1.0
 	collision_mask = 0
+
+func reset_bee() -> void:
+	impact_frames.scale = Vector2.ONE
