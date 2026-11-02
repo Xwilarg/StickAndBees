@@ -38,6 +38,8 @@ func _process(delta: float) -> void:
 			(get_viewport().get_camera_2d() as Camera).target = null
 			is_good_throw = false
 
+	if is_good_throw:
+		impact_frames.scale = lerp(Vector2.ONE, Vector2.ONE * 4, timer / 3.0)
 	linear_velocity = dir * speed
 
 func _on_body_entered(body: Node) -> void:
