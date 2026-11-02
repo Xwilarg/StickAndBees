@@ -4,6 +4,8 @@ extends Sprite2D
 
 var deviation_x: int
 
+const deg_to_rad = 0.01745
+
 func _process(delta: float) -> void:
 	if position.y < -5000:
 		GameManager.go_to_shop(deviation_x)
@@ -15,5 +17,8 @@ func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		var delta: Vector2 = event.relative
 		delta.y = clampf(delta.y, - PersistentData.max_speed_y,  PersistentData.max_speed_y)
+		rotate(delta.x * deg_to_rad * .1)
 		deviation_x += abs(roundi(delta.x))
-		position += delta
+		position += (Vector2.DOWN * cos(rotation) + Vector2.LEFT * sin(rotation)) * delta.y
+		if abs(rotation) > 1:
+			print("dead")

@@ -9,7 +9,6 @@ func _process(delta: float) -> void:
 
 	timer -= delta
 	if timer <= 0:
-		print("change dir")
 		dir = Vector2(randf_range(-1.0, 1.0), randf_range(-1.0, 1.0)).normalized()
 		timer = randf_range(.75, 1.5)
 
