@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dt10gsyixkbah"]
 
-[ext_resource type="Texture2D" uid="uid://k01h3xq8bjum" path="res://game/sprites/Stick.png" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://ld2wmrajumq3" path="res://game/sprites/BetterStick.png" id="1_sugp2"]
 [ext_resource type="Script" uid="uid://cdecglcvdcv7h" path="res://scripts/controller/stick.gd" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://rrg628deuang" path="res://scenes/prefabs/bee.tscn" id="3_sugp2"]
 
@@ -10,7 +10,7 @@ font_size = 50
 [node name="Root" type="Node2D" unique_id=1868032926]
 
 [node name="Stick" type="Sprite2D" parent="." unique_id=2064295942 node_paths=PackedStringArray("camera")]
-texture = ExtResource("1_o5qli")
+texture = ExtResource("1_sugp2")
 script = ExtResource("2_0wfyh")
 camera = NodePath("../Camera2D")
 
