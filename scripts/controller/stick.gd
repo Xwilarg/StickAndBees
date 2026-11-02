@@ -1,6 +1,6 @@
 class_name Stick extends RigidBody2D
 
-@export var camera: Camera2D
+@export var camera: Camera
 @export var end: Node2D
 
 const physic_multiplier = 2.0
@@ -29,6 +29,12 @@ func _process(delta: float) -> void:
 		return
 
 	elapsed += delta
+
+	if global_position.y < -5000 and camera.go_up == null:
+		camera.go_up = self
+
+	if global_position.y < -20_000:
+		GameManager.die("WENT_UP", "Let's go back to the game, okay?")
 
 	if pushTimer > 0.0:
 		pushTimer -= delta * 2.0
