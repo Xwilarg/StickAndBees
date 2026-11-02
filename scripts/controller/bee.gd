@@ -21,13 +21,14 @@ func _process(delta: float) -> void:
 	rotate(rot)
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	var red = global_position - area.global_position
+	var stick = area as Stick
+	var red = global_position - area.end.global_position
 	var throwDir = red.x
 	var dir01 = -1 if throwDir < 0 else 1
-	var stick = area as Stick
 	stick.push(dir01)
 
 	rot = dir01 * 0.1
 	timer = 1.0
+	speed = stick.get_velocity() * 4.0
 	dir = red.normalized()
-	speed = stick.get_velocity()
+	dir.x = -dir.x

@@ -9,9 +9,13 @@ var is_paused: bool = false
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	get_node("/root/Root/CanvasLayer/PauseUI").visible = false
+	curr_state = game_state.WAITING_FOR_INPUT
 
 func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("restart"):
+		_ready()
+		get_tree().reload_current_scene()
+
 	if curr_state == game_state.WAITING_FOR_INPUT and Input.is_action_just_pressed("confirm"):
 		get_node("/root/Root/CanvasLayer/StartingUI").queue_free()
 		curr_state = game_state.PLAYING
@@ -26,6 +30,7 @@ func go_to_shop():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func die():
+	get_node("/root/Root/CanvasLayer/LostUI").visible = true
 	go_to_shop()
 
 

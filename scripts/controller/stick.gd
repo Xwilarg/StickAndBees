@@ -22,10 +22,10 @@ func _process(delta: float) -> void:
 	elapsed += delta
 
 	if newRot != lastRot:
-		velocities.push_back(VelByTime.new(newRot, elapsed))
+		velocities.push_back(VelByTime.new(abs(newRot - lastRot), elapsed))
 	newRot = lastRot
 
-	while velocities.size() > 0 and velocities[0].time < elapsed - .5:
+	while velocities.size() > 0 and velocities[0].time < elapsed - .25:
 		velocities.remove_at(0)
 
 	if pushTimer > 0.0:

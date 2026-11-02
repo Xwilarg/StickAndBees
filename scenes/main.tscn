@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://xi766n71yxpr" path="res://game/sprites/Beehive.png" id="4_jyhfs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eouaw"]
-radius = 95.036804
+radius = 178.82
 
 [sub_resource type="LabelSettings" id="LabelSettings_bhunq"]
 font_size = 50
@@ -34,7 +34,7 @@ texture = ExtResource("1_sugp2")
 position = Vector2(-227, -3028)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stick" unique_id=1728973561]
-position = Vector2(-201.99998, -2934.9998)
+position = Vector2(-188, -2869)
 rotation = -0.061086524
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("CircleShape2D_eouaw")
@@ -74,6 +74,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PauseUI" type="Control" parent="CanvasLayer" unique_id=2127819024]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -97,6 +98,35 @@ offset_bottom = 508.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Game is paused"
+label_settings = SubResource("LabelSettings_bhunq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LostUI" type="Control" parent="CanvasLayer" unique_id=1996373762]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/LostUI" unique_id=1314301043]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1044.5
+offset_top = 99.5
+offset_right = 2156.5
+offset_bottom = 508.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "You failed, press R to restart"
 label_settings = SubResource("LabelSettings_bhunq")
 horizontal_alignment = 1
 vertical_alignment = 1
