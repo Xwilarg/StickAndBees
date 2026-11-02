@@ -7,7 +7,7 @@ var deviation_x: int
 const deg_to_rad = 0.01745
 
 func _process(delta: float) -> void:
-	if position.y < -5000:
+	if position.y < -5000 && abs(position.x) < 2.0:
 		GameManager.go_to_shop(deviation_x)
 
 func _unhandled_input(event):

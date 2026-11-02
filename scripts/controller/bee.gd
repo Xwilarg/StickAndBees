@@ -5,7 +5,7 @@ var dir: Vector2
 const speed = 5.0
 
 func _process(delta: float) -> void:
-	if GameManager.curr_state != GameManager.game_state.PLAYING and not GameManager.is_paused: return
+	if GameManager.curr_state != GameManager.game_state.PLAYING or GameManager.is_paused: return
 
 	timer -= delta
 	if timer <= 0:

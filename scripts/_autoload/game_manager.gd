@@ -24,3 +24,4 @@ func _process(_delta: float) -> void:
 func go_to_shop(deviation: int):
 	GameManager.curr_state = GameManager.game_state.SHOP
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	print("won")
