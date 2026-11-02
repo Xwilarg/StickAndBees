@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://rrg628deuang" path="res://scenes/prefabs/bee.tscn" id="3_sugp2"]
 [ext_resource type="Texture2D" uid="uid://xi766n71yxpr" path="res://game/sprites/Beehive.png" id="4_jyhfs"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_eouaw"]
+radius = 95.036804
+
 [sub_resource type="LabelSettings" id="LabelSettings_bhunq"]
 font_size = 50
 
@@ -15,8 +18,10 @@ font_size = 50
 position = Vector2(-5907, -5399)
 scale = Vector2(10, 10)
 
-[node name="Stick" type="Node2D" parent="." unique_id=700539872 node_paths=PackedStringArray("camera", "end")]
+[node name="Stick" type="Area2D" parent="." unique_id=992810686 node_paths=PackedStringArray("camera", "end")]
 position = Vector2(0, 2760)
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("2_0wfyh")
 camera = NodePath("../Camera2D")
 end = NodePath("StickEnd")
@@ -27,6 +32,12 @@ texture = ExtResource("1_sugp2")
 
 [node name="StickEnd" type="Node2D" parent="Stick" unique_id=1477816012]
 position = Vector2(-227, -3028)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stick" unique_id=1728973561]
+position = Vector2(-201.99998, -2934.9998)
+rotation = -0.061086524
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("CircleShape2D_eouaw")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1824057858]
 position = Vector2(0, -2500)

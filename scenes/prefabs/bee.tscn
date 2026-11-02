@@ -12,7 +12,11 @@ script = ExtResource("2_d5jp7")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=594928438]
 scale = Vector2(0.19999999, 0.19999999)
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=900958761]
 position = Vector2(-159, 246)
 shape = SubResource("CircleShape2D_riqys")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
