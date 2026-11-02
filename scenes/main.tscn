@@ -5,7 +5,11 @@
 [ext_resource type="Script" uid="uid://w1it6qaswye3" path="res://scripts/level_manager.gd" id="1_tefeu"]
 [ext_resource type="Script" uid="uid://cdecglcvdcv7h" path="res://scripts/controller/stick.gd" id="2_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://xi766n71yxpr" path="res://game/sprites/Beehive.png" id="4_jyhfs"]
+[ext_resource type="Script" uid="uid://y34wc2ptr8j2" path="res://scripts/controller/beehive.gd" id="4_o6xl0"]
 [ext_resource type="Script" uid="uid://sq0dwxi2ajc2" path="res://scripts/controller/camera.gd" id="4_tefeu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bhunq"]
+radius = 42.86
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eouaw"]
 radius = 178.82
@@ -22,6 +26,19 @@ script = ExtResource("1_tefeu")
 [node name="Background" parent="." unique_id=1443969857 instance=ExtResource("1_tbgi4")]
 position = Vector2(-5907, -5399)
 scale = Vector2(10, 10)
+
+[node name="Beehive" type="Sprite2D" parent="." unique_id=1072170103]
+position = Vector2(-292, -5477)
+texture = ExtResource("4_jyhfs")
+script = ExtResource("4_o6xl0")
+
+[node name="Area2D" type="Area2D" parent="Beehive" unique_id=1689979889]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Beehive/Area2D" unique_id=1445307176]
+position = Vector2(290, 138)
+shape = SubResource("CircleShape2D_bhunq")
 
 [node name="Stick" type="RigidBody2D" parent="." unique_id=1579409834 node_paths=PackedStringArray("camera", "end")]
 position = Vector2(0, 2760)
@@ -161,6 +178,4 @@ label_settings = SubResource("LabelSettings_tefeu")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Beehive" type="Sprite2D" parent="." unique_id=1072170103]
-position = Vector2(-292, -5477)
-texture = ExtResource("4_jyhfs")
+[connection signal="body_entered" from="Beehive/Area2D" to="Beehive" method="_on_area_2d_body_entered"]

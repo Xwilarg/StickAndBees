@@ -34,9 +34,6 @@ func _process(delta: float) -> void:
 		pushTimer -= delta * 2.0
 		angular_velocity += pushForce * pushTimer
 
-	if end.global_position.y < -5000 && abs(end.global_position.x) < 50.0:
-		GameManager.die("GOT_HONEY", "You got the honey!")
-
 	rot += mov.x * deg_to_rad * 1.0
 	angular_velocity = rot
 	linear_velocity = (Vector2.DOWN * cos(rotation) + Vector2.LEFT * sin(rotation)) * mov.y * 300.0
