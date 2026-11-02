@@ -16,9 +16,12 @@ func _process(_delta: float) -> void:
 		_ready()
 		get_tree().reload_current_scene()
 
-	if curr_state == game_state.WAITING_FOR_INPUT and Input.is_action_just_pressed("confirm"):
-		get_node("/root/Root/CanvasLayer/StartingUI").queue_free()
-		curr_state = game_state.PLAYING
+	if curr_state == game_state.WAITING_FOR_INPUT:
+		if Input.is_action_just_pressed("confirm"):
+			get_node("/root/Root/CanvasLayer/StartingUI").visible = false
+			curr_state = game_state.PLAYING
+		if PersistentData.is_right_click_run and Input.is_action_just_pressed("confirm_ach"):
+			die("RIGHT_CLICK", "Thank you for reading!")
 
 	if curr_state == game_state.PLAYING and Input.is_action_just_pressed("pause"):
 		is_paused = not is_paused
@@ -33,6 +36,11 @@ func die(ach: String, text: String):
 	PersistentData.unlock_achievement(ach)
 	get_node("/root/Root/CanvasLayer/LostUI").visible = true
 	(get_node("/root/Root/CanvasLayer/LostUI/Text") as Label).text = text
+	get_node("/root/Root/CanvasLayer/StartingUI").visible = false
+	PersistentData.runs_since_right_click_ach += 1
+	PersistentData.is_right_click_run = PersistentData.runs_since_right_click_ach >= 5 and randi_range(0, 10) == 0
+	if PersistentData.is_right_click_run: PersistentData.runs_since_right_click_ach = 0
+
 	go_to_shop()
 
 func is_game_ongoing() -> bool:

@@ -8,3 +8,7 @@ func _ready() -> void:
 		var inst = bee.instantiate()
 		inst.global_position = Vector2(randf_range(center.x - 3000.0, center.x + 3000.0), randf_range(center.y - 1000.0, center.y + 1000.0))
 		add_child(inst)
+
+	print(PersistentData.is_right_click_run)
+	if PersistentData.is_right_click_run:
+		(get_node("/root/Root/CanvasLayer/StartingUI/Label") as Label).text = "Press right click to win"
