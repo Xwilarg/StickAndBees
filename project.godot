@@ -24,6 +24,14 @@ GameManager="*uid://c415r848rm0uj"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[file_customization]
+
+folder_colors={
+"res://game/": "purple",
+"res://scenes/": "yellow",
+"res://scripts/": "green"
+}
+
 [input]
 
 confirm={
