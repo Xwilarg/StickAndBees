@@ -8,7 +8,6 @@ var curr_state: game_state = game_state.WAITING_FOR_INPUT
 var is_paused: bool = false
 
 func _ready() -> void:
-	PersistentData.total_deviation = 0.0
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	get_node("/root/Root/CanvasLayer/PauseUI").visible = false
 
@@ -23,10 +22,5 @@ func _process(_delta: float) -> void:
 		get_node("/root/Root/CanvasLayer/PauseUI").visible = is_paused
 
 func go_to_shop(deviation: int):
-	PersistentData.total_deviation = deviation
-	var added_money = added_money_against - deviation
-	if added_money < min_money_added: added_money = min_money_added
-	PersistentData.money += added_money
 	GameManager.curr_state = GameManager.game_state.SHOP
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	get_tree().change_scene_to_file("res://scenes/shop.tscn")
