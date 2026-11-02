@@ -21,7 +21,13 @@ func _process(_delta: float) -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if is_paused else Input.MOUSE_MODE_CAPTURED
 		get_node("/root/Root/CanvasLayer/PauseUI").visible = is_paused
 
-func go_to_shop(deviation: int):
+func go_to_shop():
 	GameManager.curr_state = GameManager.game_state.SHOP
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	print("won")
+
+func die():
+	go_to_shop()
+
+
+func is_game_ongoing() -> bool:
+	return curr_state == game_state.PLAYING and not is_paused
