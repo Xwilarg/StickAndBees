@@ -2,7 +2,7 @@ extends Sprite2D
 
 @export var camera: Camera2D
 
-var deviation_x: float
+var deviation_x: int
 
 func _process(delta: float) -> void:
 	if position.y < -5000:
@@ -14,5 +14,6 @@ func _unhandled_input(event):
 	
 	if event is InputEventMouseMotion:
 		var delta: Vector2 = event.relative
-		deviation_x += abs(delta.x)
+		delta.y = clampf(delta.y, - PersistentData.max_speed_y,  PersistentData.max_speed_y)
+		deviation_x += abs(roundi(delta.x))
 		position += delta

@@ -1,4 +1,8 @@
 class_name PersistentData
 
-static var total_deviation: float = 0.0
+# Progress
+static var total_deviation: int = 0
 static var money: int = 0
+
+# Upgrades
+static var max_speed_y: float = 50.0
