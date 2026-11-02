@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dt10gsyixkbah"]
 
 [ext_resource type="Texture2D" uid="uid://ld2wmrajumq3" path="res://game/sprites/BetterStick.png" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://bfl1mt3flf7fl" path="res://scenes/background.tscn" id="1_tbgi4"]
 [ext_resource type="Script" uid="uid://cdecglcvdcv7h" path="res://scripts/controller/stick.gd" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://rrg628deuang" path="res://scenes/prefabs/bee.tscn" id="3_sugp2"]
 [ext_resource type="Texture2D" uid="uid://xi766n71yxpr" path="res://game/sprites/Beehive.png" id="4_jyhfs"]
@@ -10,14 +11,22 @@ font_size = 50
 
 [node name="Root" type="Node2D" unique_id=1868032926]
 
-[node name="Stick" type="Node2D" parent="." unique_id=700539872 node_paths=PackedStringArray("camera")]
+[node name="Background" parent="." unique_id=1443969857 instance=ExtResource("1_tbgi4")]
+position = Vector2(-5907, -5399)
+scale = Vector2(10, 10)
+
+[node name="Stick" type="Node2D" parent="." unique_id=700539872 node_paths=PackedStringArray("camera", "end")]
 position = Vector2(0, 2760)
 script = ExtResource("2_0wfyh")
 camera = NodePath("../Camera2D")
+end = NodePath("StickEnd")
 
 [node name="Sprite" type="Sprite2D" parent="Stick" unique_id=1707656594]
 position = Vector2(-66, -1544)
 texture = ExtResource("1_sugp2")
+
+[node name="StickEnd" type="Node2D" parent="Stick" unique_id=1477816012]
+position = Vector2(-227, -3028)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1824057858]
 position = Vector2(0, -2500)

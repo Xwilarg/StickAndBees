@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://jbu6f48m3lkr"]
+
+[ext_resource type="Script" uid="uid://cdecglcvdcv7h" path="res://scripts/controller/stick.gd" id="1_x8ut2"]
+[ext_resource type="Texture2D" uid="uid://ld2wmrajumq3" path="res://game/sprites/BetterStick.png" id="2_erjht"]
+
+[node name="Stick" type="Node2D" unique_id=487900147 node_paths=PackedStringArray("camera")]
+script = ExtResource("1_x8ut2")
+camera = NodePath("")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=597482473]
+position = Vector2(-66, -1544)
+texture = ExtResource("2_erjht")
+
+[node name="StickEnd" type="Node2D" parent="." unique_id=1621835127]
+position = Vector2(-227, -3028)

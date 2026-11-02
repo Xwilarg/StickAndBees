@@ -1,13 +1,15 @@
 extends Node2D
 
 @export var camera: Camera2D
+@export var end: Node2D
 
 var deviation_x: int
 
 const deg_to_rad = 0.01745
 
 func _process(delta: float) -> void:
-	if position.y < -5000 && abs(position.x) < 2.0:
+	print(end.global_position)
+	if end.global_position.y < -5000 && abs(end.global_position.x) < 50.0:
 		GameManager.go_to_shop(deviation_x)
 
 func _unhandled_input(event):
