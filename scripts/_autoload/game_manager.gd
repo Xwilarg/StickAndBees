@@ -22,6 +22,7 @@ func _process(_delta: float) -> void:
 
 func go_to_shop(deviation: float):
 	PersistentData.total_deviation = deviation
+	PersistentData.money += roundi(200 - deviation)
 	GameManager.curr_state = GameManager.game_state.SHOP
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	get_tree().change_scene_to_file("res://scenes/shop.tscn")
