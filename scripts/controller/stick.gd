@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 		angular_velocity += pushForce * pushTimer
 
 	if end.global_position.y < -5000 && abs(end.global_position.x) < 50.0:
-		GameManager.die("You got the honey!")
+		GameManager.die("GOT_HONEY", "You got the honey!")
 
 	rot += mov.x * deg_to_rad * 1.0
 	angular_velocity = rot
@@ -43,7 +43,7 @@ func _process(delta: float) -> void:
 	mov = Vector2.ZERO
 
 	if is_enabled and abs(wrapf(rotation, -PI, PI)) > PI / 2:
-		GameManager.die("You lost your stick!")
+		GameManager.die("LOST_STICK", "You lost your stick!")
 
 func _unhandled_input(event):
 	if not GameManager.is_game_ongoing() or not is_enabled:

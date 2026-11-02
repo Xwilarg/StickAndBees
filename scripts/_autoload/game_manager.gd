@@ -29,7 +29,8 @@ func go_to_shop():
 	GameManager.curr_state = GameManager.game_state.SHOP
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
-func die(text: String):
+func die(ach: String, text: String):
+	PersistentData.unlock_achievement(ach)
 	get_node("/root/Root/CanvasLayer/LostUI").visible = true
 	(get_node("/root/Root/CanvasLayer/LostUI/Text") as Label).text = text
 	go_to_shop()

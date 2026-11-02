@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 		rotation = 0.0
 		collision_mask = 2
 		if is_good_throw:
-			GameManager.die("Throw distance: " + str(roundi(abs(start_pos.x - global_position.x) / 100)) + "m")
+			GameManager.die("THREW_BEE", "Throw distance: " + str(roundi(abs(start_pos.x - global_position.x) / 100)) + "m")
 			(get_viewport().get_camera_2d() as Camera).target = null
 			is_good_throw = false
 
@@ -46,11 +46,12 @@ func _on_body_entered(body: Node) -> void:
 	var vel = stick.get_velocity()
 	speed = vel * 2000.0
 	dir = red.normalized()
+	var cam = get_viewport().get_camera_2d() as Camera
 	if vel > 0: dir.x = abs(dir.x)
 	else: dir.x = -abs(dir.x)
-	if speed > 10_000 && dir.y < 0: # Great throw!
+	if speed > 10_000 && dir.y < 0 and cam.target == null: # Great throw!
 		stick.is_enabled = false
-		(get_viewport().get_camera_2d() as Camera).target = self
+		cam.target = self
 		start_pos = global_position
 		timer = 3.0
 		is_good_throw = true
