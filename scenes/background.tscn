@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://bfl1mt3flf7fl"]
+
+[ext_resource type="Texture2D" uid="uid://s07dysg4f4i8" path="res://game/sprites/Sky.png" id="1_y0upk"]
+[ext_resource type="Texture2D" uid="uid://cofawm074w7jm" path="res://game/sprites/Cloud.png" id="2_cbsqf"]
+[ext_resource type="Texture2D" uid="uid://c1gsgilci4tnr" path="res://game/sprites/Tree.png" id="2_jougr"]
+[ext_resource type="Texture2D" uid="uid://b5fq03hvfqyyi" path="res://game/sprites/Flower1.png" id="4_wisxt"]
+[ext_resource type="Texture2D" uid="uid://kign3s4rfj7k" path="res://game/sprites/Flower2.png" id="5_wax1t"]
+
+[sub_resource type="Gradient" id="Gradient_cbsqf"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pkf6b"]
+gradient = SubResource("Gradient_cbsqf")
+width = 1000
+height = 1000
+
+[node name="Background" type="Node2D" unique_id=1443969857]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=385552498]
+position = Vector2(595.907, 296.8761)
+scale = Vector2(1.513814, 1.3257523)
+texture = SubResource("GradientTexture2D_pkf6b")
+
+[node name="Sky" type="Sprite2D" parent="." unique_id=2063574534]
+position = Vector2(589.907, 256.87613)
+scale = Vector2(0.45663315, 0.45663315)
+texture = ExtResource("1_y0upk")
+
+[node name="Cloud" type="Sprite2D" parent="Sky" unique_id=412063769]
+position = Vector2(-927.913, -462.02338)
+scale = Vector2(0.3523881, 0.3523881)
+texture = ExtResource("2_cbsqf")
+
+[node name="Cloud2" type="Sprite2D" parent="Sky" unique_id=1289670874]
+position = Vector2(864.11945, -376.9647)
+scale = Vector2(0.3523881, 0.3523881)
+texture = ExtResource("2_cbsqf")
+
+[node name="Tree" type="Sprite2D" parent="." unique_id=1030912895]
+position = Vector2(610.90704, 295.87613)
+scale = Vector2(0.17536874, 0.17536874)
+texture = ExtResource("2_jougr")
+
+[node name="Flower1" type="Sprite2D" parent="." unique_id=57077465]
+position = Vector2(475.90704, 595.8761)
+scale = Vector2(0.17765318, 0.17765318)
+texture = ExtResource("4_wisxt")
+
+[node name="Flower3" type="Sprite2D" parent="." unique_id=340222004]
+position = Vector2(826.90704, 743.87604)
+scale = Vector2(0.17765318, 0.17765318)
+texture = ExtResource("4_wisxt")
+
+[node name="Flower2" type="Sprite2D" parent="." unique_id=881575377]
+position = Vector2(348.90704, 667.87616)
+scale = Vector2(0.2193335, 0.2193335)
+texture = ExtResource("5_wax1t")
+
+[node name="Flower4" type="Sprite2D" parent="." unique_id=1878700452]
+position = Vector2(884.90704, 585.87616)
+scale = Vector2(0.2193335, 0.2193335)
+texture = ExtResource("5_wax1t")
