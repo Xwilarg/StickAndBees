@@ -18,10 +18,12 @@ font_size = 50
 position = Vector2(-5907, -5399)
 scale = Vector2(10, 10)
 
-[node name="Stick" type="Area2D" parent="." unique_id=992810686 node_paths=PackedStringArray("camera", "end")]
+[node name="Stick" type="RigidBody2D" parent="." unique_id=1579409834 node_paths=PackedStringArray("camera", "end")]
 position = Vector2(0, 2760)
 collision_layer = 2
 collision_mask = 0
+center_of_mass_mode = 1
+continuous_cd = 1
 script = ExtResource("2_0wfyh")
 camera = NodePath("../Camera2D")
 end = NodePath("StickEnd")
@@ -36,7 +38,7 @@ position = Vector2(-227, -3028)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stick" unique_id=1728973561]
 position = Vector2(-188, -2869)
 rotation = -0.061086524
-scale = Vector2(0.9999999, 0.9999999)
+scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("CircleShape2D_eouaw")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1824057858]
