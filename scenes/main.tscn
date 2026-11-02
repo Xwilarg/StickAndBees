@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cdecglcvdcv7h" path="res://scripts/controller/stick.gd" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://rrg628deuang" path="res://scenes/prefabs/bee.tscn" id="3_sugp2"]
 [ext_resource type="Texture2D" uid="uid://xi766n71yxpr" path="res://game/sprites/Beehive.png" id="4_jyhfs"]
+[ext_resource type="Script" uid="uid://sq0dwxi2ajc2" path="res://scripts/controller/camera.gd" id="4_tefeu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eouaw"]
 radius = 178.82
@@ -46,6 +47,7 @@ shape = SubResource("CircleShape2D_eouaw")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1824057858]
 position = Vector2(0, -2500)
 zoom = Vector2(0.1, 0.1)
+script = ExtResource("4_tefeu")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=490046877]
 

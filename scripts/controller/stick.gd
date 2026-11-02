@@ -9,11 +9,16 @@ var pushTimer = 0.0
 
 var elapsed: float
 var mov: Vector2
+var rot = 0.0
+
+var is_enabled: bool = true
 
 const deg_to_rad = 0.01745
 
 func _process(delta: float) -> void:
 	if not GameManager.is_game_ongoing():
+		linear_velocity = Vector2.ZERO
+		angular_velocity = 0.0
 		return
 
 	elapsed += delta
@@ -25,15 +30,16 @@ func _process(delta: float) -> void:
 	if end.global_position.y < -5000 && abs(end.global_position.x) < 50.0:
 		GameManager.go_to_shop()
 
-	angular_velocity += mov.x * deg_to_rad * 1.0
+	rot += mov.x * deg_to_rad * 1.0
+	angular_velocity = rot
 	linear_velocity = (Vector2.DOWN * cos(rotation) + Vector2.LEFT * sin(rotation)) * mov.y * 300.0
 	mov = Vector2.ZERO
 
-	if abs(wrapf(rotation, -PI, PI)) > PI / 2:
+	if is_enabled and abs(wrapf(rotation, -PI, PI)) > PI / 2:
 		GameManager.die()
 
 func _unhandled_input(event):
-	if not GameManager.is_game_ongoing():
+	if not GameManager.is_game_ongoing() or not is_enabled:
 		return
 	
 	if event is InputEventMouseMotion:

@@ -30,7 +30,12 @@ func _on_body_entered(body: Node) -> void:
 	stick.push(dir01)
 
 	angular_velocity = dir01 * 20
-	timer = 1.0
 	speed = stick.get_velocity() * 2000.0
 	dir = red.normalized()
+	if speed > 10_000 && dir.y < 0:
+		stick.is_enabled = false
+		(get_viewport().get_camera_2d() as Camera).target = self
+		timer = 3.0
+	else:
+		timer = 1.0
 	collision_mask = 0
