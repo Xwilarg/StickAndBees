@@ -1,3 +1,14 @@
 [gd_scene format=3 uid="uid://dt10gsyixkbah"]
 
+[ext_resource type="Texture2D" uid="uid://k01h3xq8bjum" path="res://game/sprites/Stick.png" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://cdecglcvdcv7h" path="res://scripts/stick.gd" id="2_0wfyh"]
+
 [node name="Root" type="Node2D" unique_id=1868032926]
+
+[node name="Stick" type="Sprite2D" parent="." unique_id=2064295942]
+texture = ExtResource("1_o5qli")
+script = ExtResource("2_0wfyh")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1824057858]
+position = Vector2(0, -2500)
+zoom = Vector2(0.1, 0.1)
