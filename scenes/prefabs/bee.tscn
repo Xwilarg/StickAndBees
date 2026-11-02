@@ -4,19 +4,21 @@
 [ext_resource type="Script" uid="uid://cvlrpswi813yw" path="res://scripts/controller/bee.gd" id="2_d5jp7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_riqys"]
-radius = 1024.0
+radius = 214.4
 
-[node name="Bee" type="Sprite2D" unique_id=1664250955]
-texture = ExtResource("1_eouaw")
-script = ExtResource("2_d5jp7")
-
-[node name="Area2D" type="Area2D" parent="." unique_id=594928438]
-scale = Vector2(0.19999999, 0.19999999)
+[node name="Bee" type="RigidBody2D" unique_id=1515792607]
 collision_layer = 0
 collision_mask = 2
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("2_d5jp7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=900958761]
-position = Vector2(-159, 246)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2142240497]
+texture = ExtResource("1_eouaw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=900958761]
+position = Vector2(-24.00003, 35.00003)
+rotation = -0.16545127
 shape = SubResource("CircleShape2D_riqys")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
