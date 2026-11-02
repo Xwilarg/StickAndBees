@@ -3,12 +3,21 @@ extends RigidBody2D
 var timer: float
 var dir: Vector2
 const speed_ref = 50.0
-var speed = 50.0
+var speed: float = 50.0
+var start_pos: Vector2
+var is_good_throw: bool
+var break_pause: float
 
 func _process(delta: float) -> void:
-	if not GameManager.is_game_ongoing():
+	if GameManager.curr_state == GameManager.game_state.WAITING_FOR_INPUT or GameManager.is_paused:
 		linear_velocity = Vector2.ZERO
 		angular_velocity = 0.0
+		return
+
+	if break_pause > 0.0:
+		linear_velocity = Vector2.ZERO
+		angular_velocity = 0.0
+		break_pause -= delta
 		return
 
 	timer -= delta
@@ -19,6 +28,10 @@ func _process(delta: float) -> void:
 		angular_velocity = 0.0
 		rotation = 0.0
 		collision_mask = 2
+		if is_good_throw:
+			GameManager.die("Throw distance: " + str(roundi(abs(start_pos.x - global_position.x) / 100)) + "m")
+			(get_viewport().get_camera_2d() as Camera).target = null
+			is_good_throw = false
 
 	linear_velocity = dir * speed
 
@@ -30,12 +43,19 @@ func _on_body_entered(body: Node) -> void:
 	stick.push(dir01)
 
 	angular_velocity = dir01 * 20
-	speed = stick.get_velocity() * 2000.0
+	var vel = stick.get_velocity()
+	speed = vel * 2000.0
 	dir = red.normalized()
-	if speed > 10_000 && dir.y < 0:
+	if vel > 0: dir.x = abs(dir.x)
+	else: dir.x = -abs(dir.x)
+	if speed > 10_000 && dir.y < 0: # Great throw!
 		stick.is_enabled = false
 		(get_viewport().get_camera_2d() as Camera).target = self
+		start_pos = global_position
 		timer = 3.0
+		is_good_throw = true
+		break_pause = 0.5
+		stick.break_pause = 0.5
 	else:
 		timer = 1.0
 	collision_mask = 0

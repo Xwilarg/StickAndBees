@@ -29,10 +29,10 @@ func go_to_shop():
 	GameManager.curr_state = GameManager.game_state.SHOP
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
-func die():
+func die(text: String):
 	get_node("/root/Root/CanvasLayer/LostUI").visible = true
+	(get_node("/root/Root/CanvasLayer/LostUI/Text") as Label).text = text
 	go_to_shop()
-
 
 func is_game_ongoing() -> bool:
 	return curr_state == game_state.PLAYING and not is_paused

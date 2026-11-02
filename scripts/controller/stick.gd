@@ -10,6 +10,7 @@ var pushTimer = 0.0
 var elapsed: float
 var mov: Vector2
 var rot = 0.0
+var break_pause: float
 
 var is_enabled: bool = true
 
@@ -19,6 +20,12 @@ func _process(delta: float) -> void:
 	if not GameManager.is_game_ongoing():
 		linear_velocity = Vector2.ZERO
 		angular_velocity = 0.0
+		return
+
+	if break_pause > 0.0:
+		linear_velocity = Vector2.ZERO
+		angular_velocity = 0.0
+		break_pause -= delta
 		return
 
 	elapsed += delta
@@ -36,7 +43,7 @@ func _process(delta: float) -> void:
 	mov = Vector2.ZERO
 
 	if is_enabled and abs(wrapf(rotation, -PI, PI)) > PI / 2:
-		GameManager.die()
+		GameManager.die("You lost your stick!")
 
 func _unhandled_input(event):
 	if not GameManager.is_game_ongoing() or not is_enabled:
@@ -47,7 +54,7 @@ func _unhandled_input(event):
 		delta.y = clampf(delta.y, - PersistentData.max_speed_y,  PersistentData.max_speed_y)
 		mov = delta
 
-func get_velocity():
+func get_velocity() -> float:
 	return angular_velocity
 
 func push(dir) -> void:
