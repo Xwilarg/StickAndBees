@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://xi766n71yxpr" path="res://game/sprites/Beehive.png" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://y34wc2ptr8j2" path="res://scripts/controller/beehive.gd" id="4_o6xl0"]
 [ext_resource type="Script" uid="uid://sq0dwxi2ajc2" path="res://scripts/controller/camera.gd" id="4_tefeu"]
+[ext_resource type="Texture2D" uid="uid://bdvcxsvixugft" path="res://game/sprites/RaisingLadder.png" id="8_choun"]
+[ext_resource type="Texture2D" uid="uid://cc5skrolkstue" path="res://game/sprites/Bear.png" id="8_tipki"]
+[ext_resource type="Texture2D" uid="uid://dpybx5x06v5m3" path="res://game/sprites/RaiserSurface.png" id="9_ya4ey"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhunq"]
 radius = 42.86
@@ -52,6 +55,10 @@ script = ExtResource("2_0wfyh")
 camera = NodePath("../Camera2D")
 end = NodePath("StickEnd")
 
+[node name="Bear" type="Sprite2D" parent="Stick" unique_id=544440111]
+position = Vector2(-43, -27)
+texture = ExtResource("8_tipki")
+
 [node name="Sprite" type="Sprite2D" parent="Stick" unique_id=1707656594]
 position = Vector2(-66, -1544)
 texture = ExtResource("1_sugp2")
@@ -64,6 +71,15 @@ position = Vector2(-188, -2869)
 rotation = -0.061086524
 scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("CircleShape2D_eouaw")
+
+[node name="RaisingLadder" type="Sprite2D" parent="Stick" unique_id=1112124766]
+position = Vector2(257, 3441)
+scale = Vector2(2, 2)
+texture = ExtResource("8_choun")
+
+[node name="RaiserSurface" type="Sprite2D" parent="Stick" unique_id=487917900]
+position = Vector2(39, 623)
+texture = ExtResource("9_ya4ey")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1824057858]
 position = Vector2(0, -2500)
