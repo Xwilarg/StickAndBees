@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dpybx5x06v5m3" path="res://game/sprites/RaiserSurface.png" id="9_ya4ey"]
 [ext_resource type="Script" uid="uid://o4unrdjj1sqh" path="res://scripts/controller/follow.gd" id="10_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://bgbvsc5nqx44t" path="res://game/sprites/Apple.png" id="12_eb6dy"]
+[ext_resource type="Script" uid="uid://bv7r2xsv7m8a5" path="res://scripts/controller/apple.gd" id="12_trceg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhunq"]
 radius = 42.86
@@ -24,6 +25,9 @@ font_size = 50
 
 [sub_resource type="LabelSettings" id="LabelSettings_tefeu"]
 font_size = 30
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_riqys"]
+radius = 289.27
 
 [node name="Root" type="Node2D" unique_id=1868032926]
 script = ExtResource("1_tefeu")
@@ -201,8 +205,27 @@ label_settings = SubResource("LabelSettings_tefeu")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Apple" type="Sprite2D" parent="." unique_id=983240902]
+[node name="Apple" type="RigidBody2D" parent="." unique_id=2015463515 node_paths=PackedStringArray("camera", "stick")]
 position = Vector2(3543, -4188)
+collision_layer = 0
+collision_mask = 2
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("12_trceg")
+camera = NodePath("../Camera2D")
+stick = NodePath("../Stick")
+
+[node name="Sprite" type="Sprite2D" parent="Apple" unique_id=983240902]
+texture = ExtResource("12_eb6dy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Apple" unique_id=2089596412]
+shape = SubResource("CircleShape2D_riqys")
+
+[node name="BadApple" type="Sprite2D" parent="." unique_id=2118600596]
+position = Vector2(171.00002, 12460)
+scale = Vector2(5, 5)
 texture = ExtResource("12_eb6dy")
 
 [connection signal="body_entered" from="Beehive/Area2D" to="Beehive" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Apple" to="Apple" method="_on_body_entered"]
