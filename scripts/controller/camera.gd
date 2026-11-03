@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 		global_position.y = clamp(global_position.y - delta * 1000.0, go_up.global_position.y, global_position.y)
 
 	if go_down != null:
-		global_position.y = clamp(global_position.y + delta * 1000.0, global_position.y, go_down.global_position.y)
+		global_position.y = clamp(global_position.y + delta * 1000.0, global_position.y, max(go_down.global_position.y, global_position.y))
 		if global_position.y > 10_500:
 			GameManager.die("WENT_DOWN", "Such a bad apple!")
 
