@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://nej0pr5hd7nr"]
+
+[ext_resource type="AudioStream" uid="uid://drruel3pjlakm" path="res://game/audio/bgm.wav" id="1_ei016"]
+[ext_resource type="Script" uid="uid://ccif44vcptfhg" path="res://scripts/bgm.gd" id="2_pnfum"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" unique_id=393666682]
+stream = ExtResource("1_ei016")
+volume_db = 2.0
+script = ExtResource("2_pnfum")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
