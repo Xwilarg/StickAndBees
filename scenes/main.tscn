@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cc5skrolkstue" path="res://game/sprites/Bear.png" id="8_tipki"]
 [ext_resource type="Texture2D" uid="uid://dpybx5x06v5m3" path="res://game/sprites/RaiserSurface.png" id="9_ya4ey"]
 [ext_resource type="Script" uid="uid://o4unrdjj1sqh" path="res://scripts/controller/follow.gd" id="10_ya4ey"]
+[ext_resource type="Texture2D" uid="uid://bgbvsc5nqx44t" path="res://game/sprites/Apple.png" id="12_eb6dy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhunq"]
 radius = 42.86
@@ -199,5 +200,9 @@ text = "Press R to restart"
 label_settings = SubResource("LabelSettings_tefeu")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Apple" type="Sprite2D" parent="." unique_id=983240902]
+position = Vector2(3543, -4188)
+texture = ExtResource("12_eb6dy")
 
 [connection signal="body_entered" from="Beehive/Area2D" to="Beehive" method="_on_area_2d_body_entered"]
