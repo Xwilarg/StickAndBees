@@ -1,6 +1,6 @@
 extends Node2D
 
-enum game_state { WAITING_FOR_INPUT, PLAYING, SHOP }
+enum game_state { WAITING_FOR_INPUT, PLAYING, PENDING_ENDING, SHOP }
 const min_money_added = 50
 const added_money_against = 200
 

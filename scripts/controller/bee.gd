@@ -69,6 +69,7 @@ func _on_body_entered(body: Node) -> void:
 		impact_frames.play("default")
 		break_pause = 0.5
 		stick.break_pause = 0.5
+		GameManager.curr_state = GameManager.game_state.PENDING_ENDING
 		#gravity_scale = 100.0
 	else:
 		timer = 1.0
