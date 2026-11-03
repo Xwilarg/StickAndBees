@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://o4unrdjj1sqh" path="res://scripts/controller/follow.gd" id="10_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://bgbvsc5nqx44t" path="res://game/sprites/Apple.png" id="12_eb6dy"]
 [ext_resource type="Script" uid="uid://bv7r2xsv7m8a5" path="res://scripts/controller/apple.gd" id="12_trceg"]
+[ext_resource type="PackedScene" uid="uid://ce8ir7tfqploq" path="res://scenes/prefabs/flower.tscn" id="14_a8y0u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhunq"]
 radius = 42.86
@@ -231,6 +232,14 @@ shape = SubResource("CircleShape2D_riqys")
 position = Vector2(171.00002, 12460)
 scale = Vector2(5, 5)
 texture = ExtResource("12_eb6dy")
+
+[node name="Flower" parent="." unique_id=244763806 node_paths=PackedStringArray("cam") instance=ExtResource("14_a8y0u")]
+position = Vector2(2900, 370)
+cam = NodePath("../Camera2D")
+
+[node name="Flower2" parent="." unique_id=626206790 node_paths=PackedStringArray("cam") instance=ExtResource("14_a8y0u")]
+position = Vector2(-1163, 444)
+cam = NodePath("../Camera2D")
 
 [connection signal="body_entered" from="Beehive/Area2D" to="Beehive" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Apple" to="Apple" method="_on_body_entered"]

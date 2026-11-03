@@ -58,6 +58,7 @@ confirm_ach={
 [layer_names]
 
 2d_physics/layer_2="Stick"
+2d_physics/layer_3="Bee"
 
 [physics]
 

@@ -1,4 +1,4 @@
-extends RigidBody2D
+class_name Bee extends RigidBody2D
 
 var timer: float
 var dir: Vector2
@@ -37,6 +37,7 @@ func _process(delta: float) -> void:
 			#else: GameManager.die("THREW_BEE", "Throw distance: " + str(dist) + "m")
 			(get_viewport().get_camera_2d() as Camera).target = null
 			is_good_throw = false
+			#gravity_scale = 0.0
 
 	if is_good_throw:
 		impact_frames.scale = lerp(Vector2.ONE, Vector2.ONE * 4, timer / 3.0)
@@ -68,6 +69,7 @@ func _on_body_entered(body: Node) -> void:
 		impact_frames.play("default")
 		break_pause = 0.5
 		stick.break_pause = 0.5
+		#gravity_scale = 100.0
 	else:
 		timer = 1.0
 	collision_mask = 0
