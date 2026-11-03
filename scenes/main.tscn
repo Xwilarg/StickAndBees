@@ -4,16 +4,38 @@
 [ext_resource type="PackedScene" uid="uid://bfl1mt3flf7fl" path="res://scenes/background.tscn" id="1_tbgi4"]
 [ext_resource type="Script" uid="uid://w1it6qaswye3" path="res://scripts/level_manager.gd" id="1_tefeu"]
 [ext_resource type="Script" uid="uid://cdecglcvdcv7h" path="res://scripts/controller/stick.gd" id="2_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://646n0a3txtm8" path="res://game/sprites/zirk scans/asset_23.png" id="3_kmb1v"]
+[ext_resource type="Texture2D" uid="uid://dx6wm341v8s4h" path="res://game/sprites/zirk scans/asset_24.png" id="4_fuf3a"]
 [ext_resource type="Texture2D" uid="uid://xi766n71yxpr" path="res://game/sprites/Beehive.png" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://y34wc2ptr8j2" path="res://scripts/controller/beehive.gd" id="4_o6xl0"]
 [ext_resource type="Script" uid="uid://sq0dwxi2ajc2" path="res://scripts/controller/camera.gd" id="4_tefeu"]
+[ext_resource type="Texture2D" uid="uid://or4dyskm4dp3" path="res://game/sprites/zirk scans/asset_25.png" id="5_pibwh"]
+[ext_resource type="Texture2D" uid="uid://8n1q58qobuul" path="res://game/sprites/zirk scans/asset_26.png" id="6_c6pm6"]
+[ext_resource type="Texture2D" uid="uid://dt8fbxk6yuqba" path="res://game/sprites/zirk scans/asset_27.png" id="7_5he1u"]
+[ext_resource type="Texture2D" uid="uid://bf1ejubdnhxf8" path="res://game/sprites/zirk scans/asset_28.png" id="8_5poiv"]
 [ext_resource type="Texture2D" uid="uid://bdvcxsvixugft" path="res://game/sprites/RaisingLadder.png" id="8_choun"]
 [ext_resource type="Texture2D" uid="uid://cc5skrolkstue" path="res://game/sprites/Bear.png" id="8_tipki"]
+[ext_resource type="Texture2D" uid="uid://jxb2hsew7cwk" path="res://game/sprites/zirk scans/asset_29.png" id="9_2cjbq"]
 [ext_resource type="Texture2D" uid="uid://dpybx5x06v5m3" path="res://game/sprites/RaiserSurface.png" id="9_ya4ey"]
+[ext_resource type="Texture2D" uid="uid://b3a4grwddw1o4" path="res://game/sprites/zirk scans/asset_30.png" id="10_chjal"]
 [ext_resource type="Script" uid="uid://o4unrdjj1sqh" path="res://scripts/controller/follow.gd" id="10_ya4ey"]
+[ext_resource type="Texture2D" uid="uid://ntie3w12nk35" path="res://game/sprites/zirk scans/asset_31.png" id="11_cjqg0"]
 [ext_resource type="Texture2D" uid="uid://bgbvsc5nqx44t" path="res://game/sprites/Apple.png" id="12_eb6dy"]
+[ext_resource type="Texture2D" uid="uid://c1wthiojbhvqx" path="res://game/sprites/zirk scans/asset_16.png" id="12_jkv2x"]
 [ext_resource type="Script" uid="uid://bv7r2xsv7m8a5" path="res://scripts/controller/apple.gd" id="12_trceg"]
+[ext_resource type="Texture2D" uid="uid://c8ypgtfg4xjde" path="res://game/sprites/zirk scans/asset_17.png" id="13_dp3eg"]
+[ext_resource type="Texture2D" uid="uid://bhjjgwyd8o5s0" path="res://game/sprites/zirk scans/paused.png" id="13_muem4"]
 [ext_resource type="PackedScene" uid="uid://ce8ir7tfqploq" path="res://scenes/prefabs/flower.tscn" id="14_a8y0u"]
+[ext_resource type="Texture2D" uid="uid://c3dfdwbveywru" path="res://game/sprites/zirk scans/asset_18.png" id="14_dp3eg"]
+[ext_resource type="Texture2D" uid="uid://dcfki2ecscifo" path="res://game/sprites/zirk scans/asset_14.png" id="16_0ld40"]
+[ext_resource type="Texture2D" uid="uid://b4gceonah21be" path="res://game/sprites/zirk scans/asset_19.png" id="17_gqmmt"]
+[ext_resource type="Texture2D" uid="uid://dql63tygtwyxp" path="res://game/sprites/zirk scans/asset_20.png" id="18_yc10j"]
+[ext_resource type="Texture2D" uid="uid://d3ghd0m3avc8l" path="res://game/sprites/zirk scans/asset_11.png" id="19_jscy8"]
+[ext_resource type="Texture2D" uid="uid://c66j8j3i8cb3o" path="res://game/sprites/zirk scans/asset_12.png" id="20_pm3ni"]
+[ext_resource type="Texture2D" uid="uid://c8pd3dr6f3omu" path="res://game/sprites/zirk scans/asset_13.png" id="21_y6deb"]
+[ext_resource type="Texture2D" uid="uid://bqics8ijrvey5" path="res://game/sprites/zirk scans/asset_21.png" id="22_vxglm"]
+[ext_resource type="Texture2D" uid="uid://i3rwxjvsyqkg" path="res://game/sprites/zirk scans/asset_22.png" id="23_2f3dj"]
+[ext_resource type="Texture2D" uid="uid://bkwqg41hx3l0n" path="res://game/sprites/zirk scans/asset_32.png" id="24_yq6so"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhunq"]
 radius = 42.86
@@ -24,14 +46,12 @@ radius = 178.82
 [sub_resource type="LabelSettings" id="LabelSettings_bhunq"]
 font_size = 50
 
-[sub_resource type="LabelSettings" id="LabelSettings_tefeu"]
-font_size = 30
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_riqys"]
 radius = 289.27
 
 [node name="Root" type="Node2D" unique_id=1868032926]
 script = ExtResource("1_tefeu")
+digits = Array[Texture2D]([ExtResource("23_2f3dj"), ExtResource("3_kmb1v"), ExtResource("4_fuf3a"), ExtResource("5_pibwh"), ExtResource("6_c6pm6"), ExtResource("7_5he1u"), ExtResource("8_5poiv"), ExtResource("9_2cjbq"), ExtResource("10_chjal"), ExtResource("11_cjqg0")])
 
 [node name="Background" parent="." unique_id=1443969857 instance=ExtResource("1_tbgi4")]
 position = Vector2(-5907, -5399)
@@ -115,23 +135,38 @@ offset_bottom = -648.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/StartingUI" unique_id=174566904]
+[node name="LeftClick" type="TextureRect" parent="CanvasLayer/StartingUI" unique_id=1696661702]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1044.5
-offset_top = 99.5
-offset_right = 2156.5
-offset_bottom = 508.5
+offset_left = 350.0
+offset_top = 84.0
+offset_right = 1846.0
+offset_bottom = 404.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Press left click to start"
-label_settings = SubResource("LabelSettings_bhunq")
-horizontal_alignment = 1
-vertical_alignment = 1
+scale = Vector2(0.345, 0.345)
+texture = ExtResource("12_jkv2x")
+
+[node name="RightClick" type="TextureRect" parent="CanvasLayer/StartingUI" unique_id=1073443254]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 350.0
+offset_top = 84.0
+offset_right = 1846.0
+offset_bottom = 404.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.345, 0.345)
+texture = ExtResource("13_dp3eg")
 
 [node name="PauseUI" type="Control" parent="CanvasLayer" unique_id=2127819024]
 visible = false
@@ -162,6 +197,22 @@ label_settings = SubResource("LabelSettings_bhunq")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/PauseUI" unique_id=486463034]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 352.0
+offset_top = 263.0
+offset_right = 1848.0
+offset_bottom = 583.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.345, 0.345)
+texture = ExtResource("13_muem4")
+
 [node name="LostUI" type="Control" parent="CanvasLayer" unique_id=1996373762]
 visible = false
 layout_mode = 3
@@ -173,43 +224,272 @@ offset_bottom = -648.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Text" type="Label" parent="CanvasLayer/LostUI" unique_id=1314301043]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/LostUI" unique_id=1825273045]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1044.5
-offset_top = 99.5
-offset_right = 2156.5
-offset_bottom = 508.5
+offset_left = 315.0
+offset_top = 431.0
+offset_right = 2081.0
+offset_bottom = 751.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "You failed, press R to restart"
-label_settings = SubResource("LabelSettings_bhunq")
-horizontal_alignment = 1
-vertical_alignment = 1
+scale = Vector2(0.345, 0.345)
+texture = ExtResource("14_dp3eg")
 
-[node name="RestartHint" type="Label" parent="CanvasLayer/LostUI" unique_id=738298886]
+[node name="RIGHT_CLICK" type="TextureRect" parent="CanvasLayer/LostUI" unique_id=633869930]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1044.5
-offset_top = 99.5
-offset_right = 2156.5
-offset_bottom = 508.5
+offset_left = 330.0
+offset_top = 84.0
+offset_right = 2096.0
+offset_bottom = 404.0
 grow_horizontal = 2
 grow_vertical = 2
-offset_transform_enabled = true
-offset_transform_position = Vector2(0, 100)
-text = "Press R to restart"
-label_settings = SubResource("LabelSettings_tefeu")
-horizontal_alignment = 1
-vertical_alignment = 1
+scale = Vector2(0.345, 0.345)
+texture = ExtResource("16_0ld40")
+stretch_mode = 4
+
+[node name="WENT_UP" type="TextureRect" parent="CanvasLayer/LostUI" unique_id=3624823]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 294.0
+offset_top = 91.0
+offset_right = 2196.0
+offset_bottom = 411.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.345, 0.345)
+texture = ExtResource("17_gqmmt")
+stretch_mode = 4
+
+[node name="LOST_STICK" type="TextureRect" parent="CanvasLayer/LostUI" unique_id=157053207]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 305.0
+offset_top = 85.0
+offset_right = 2207.0
+offset_bottom = 405.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.345, 0.345)
+texture = ExtResource("18_yc10j")
+stretch_mode = 4
+
+[node name="WENT_DOWN" type="TextureRect" parent="CanvasLayer/LostUI" unique_id=1495801420]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 352.0
+offset_top = 83.0
+offset_right = 2254.0
+offset_bottom = 403.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.345, 0.345)
+texture = ExtResource("19_jscy8")
+stretch_mode = 4
+
+[node name="SHOT_BEE" type="TextureRect" parent="CanvasLayer/LostUI" unique_id=2045213803]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 408.0
+offset_top = 85.0
+offset_right = 2310.0
+offset_bottom = 405.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.345, 0.345)
+texture = ExtResource("20_pm3ni")
+stretch_mode = 4
+
+[node name="GOT_HONEY" type="TextureRect" parent="CanvasLayer/LostUI" unique_id=667063905]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 286.0
+offset_top = 89.0
+offset_right = 2188.0
+offset_bottom = 409.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.345, 0.345)
+texture = ExtResource("21_y6deb")
+stretch_mode = 4
+
+[node name="THREW_BEE" type="TextureRect" parent="CanvasLayer/LostUI" unique_id=1907369888]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 355.0
+offset_top = 83.0
+offset_right = 2257.0
+offset_bottom = 403.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.345, 0.345)
+texture = ExtResource("22_vxglm")
+stretch_mode = 4
+
+[node name="Digit1" type="TextureRect" parent="CanvasLayer/LostUI/THREW_BEE" unique_id=344848200]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 80.88403
+offset_top = 164.63766
+offset_right = 820.2246
+offset_bottom = 1081.1509
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.345, 0.345)
+texture = ExtResource("23_2f3dj")
+stretch_mode = 4
+
+[node name="Digit2" type="TextureRect" parent="CanvasLayer/LostUI/THREW_BEE" unique_id=1219994354]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -168.3913
+offset_top = 141.44925
+offset_right = 570.9492
+offset_bottom = 1057.9625
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.345, 0.345)
+texture = ExtResource("23_2f3dj")
+stretch_mode = 4
+
+[node name="Digit3" type="TextureRect" parent="CanvasLayer/LostUI/THREW_BEE" unique_id=1045041500]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -408.971
+offset_top = 153.04346
+offset_right = 330.3694
+offset_bottom = 1069.5566
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.345, 0.345)
+texture = ExtResource("23_2f3dj")
+stretch_mode = 4
+
+[node name="Digit4" type="TextureRect" parent="CanvasLayer/LostUI/THREW_BEE" unique_id=160084878]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -643.75366
+offset_top = 155.94202
+offset_right = 95.58679
+offset_bottom = 1072.4552
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.345, 0.345)
+texture = ExtResource("23_2f3dj")
+stretch_mode = 4
+
+[node name="Digit5" type="TextureRect" parent="CanvasLayer/LostUI/THREW_BEE" unique_id=1580369942]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -875.6377
+offset_top = 158.84058
+offset_right = -136.29724
+offset_bottom = 1075.3538
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.345, 0.345)
+texture = ExtResource("23_2f3dj")
+stretch_mode = 4
+
+[node name="Digit6" type="TextureRect" parent="CanvasLayer/LostUI/THREW_BEE" unique_id=514075271]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1124.9131
+offset_top = 158.84058
+offset_right = -385.57263
+offset_bottom = 1075.3538
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.345, 0.345)
+texture = ExtResource("23_2f3dj")
+stretch_mode = 4
+
+[node name="m" type="TextureRect" parent="CanvasLayer/LostUI/THREW_BEE" unique_id=588838750]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 312.76807
+offset_top = 318.26086
+offset_right = 1052.1085
+offset_bottom = 1234.774
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.345, 0.345)
+texture = ExtResource("24_yq6so")
+stretch_mode = 4
 
 [node name="Apple" type="RigidBody2D" parent="." unique_id=2015463515 node_paths=PackedStringArray("camera", "stick")]
 position = Vector2(3543, -4188)

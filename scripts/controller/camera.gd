@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 	if go_down != null:
 		global_position.y = clamp(global_position.y + delta * 1000.0, global_position.y, max(go_down.global_position.y, global_position.y))
 		if global_position.y > 10_500:
-			GameManager.die("WENT_DOWN", "Such a bad apple!")
+			GameManager.die("WENT_DOWN")
 
 	if zoom_flower != null and zoom_step < 4:
 		zoom_timer -= delta
@@ -35,4 +35,4 @@ func _process(delta: float) -> void:
 			global_position = lerp(base_pos, zoom_flower.global_position, zoom_step / 4.0)
 			zoom /= .9
 			if zoom_step == 4:
-				GameManager.die("SHOT_BEE", "Nice shot!")
+				GameManager.die("SHOT_BEE")

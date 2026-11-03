@@ -32,7 +32,9 @@ func _process(delta: float) -> void:
 		collision_mask = 2
 		if is_good_throw:
 			var dist = roundi(abs(start_pos.x - global_position.x) / 100)
-			GameManager.die("THREW_BEE", "Throw distance: " + str(dist) + "m")
+			GameManager.die("THREW_BEE")
+			GameManager.show_distance(str(dist))
+			
 			#if dist > 1000: GameManager.die("THREW_BEE_GREAT", "Great launch! Distance: " + str(dist) + "m")
 			#else: GameManager.die("THREW_BEE", "Throw distance: " + str(dist) + "m")
 			(get_viewport().get_camera_2d() as Camera).target = null

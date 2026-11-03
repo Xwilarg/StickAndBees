@@ -34,7 +34,7 @@ func _process(delta: float) -> void:
 		camera.go_up = self
 
 	if global_position.y < -20_000:
-		GameManager.die("WENT_UP", "Let's go back to the game, okay?")
+		GameManager.die("WENT_UP")
 
 	if pushTimer > 0.0:
 		pushTimer -= delta * 2.0
@@ -46,7 +46,7 @@ func _process(delta: float) -> void:
 	mov = Vector2.ZERO
 
 	if is_enabled and abs(wrapf(rotation, -PI, PI)) > PI / 2:
-		GameManager.die("LOST_STICK", "You lost your stick!")
+		GameManager.die("LOST_STICK")
 
 func _unhandled_input(event):
 	if not GameManager.is_game_ongoing() or not is_enabled:

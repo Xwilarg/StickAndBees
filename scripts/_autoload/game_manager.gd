@@ -21,7 +21,7 @@ func _process(_delta: float) -> void:
 			get_node("/root/Root/CanvasLayer/StartingUI").visible = false
 			curr_state = game_state.PLAYING
 		if PersistentData.is_right_click_run and Input.is_action_just_pressed("confirm_ach"):
-			die("RIGHT_CLICK", "Thank you for reading!")
+			die("RIGHT_CLICK")
 
 	if curr_state == game_state.PLAYING and Input.is_action_just_pressed("pause"):
 		is_paused = not is_paused
@@ -32,16 +32,25 @@ func go_to_shop():
 	GameManager.curr_state = GameManager.game_state.SHOP
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
-func die(ach: String, text: String):
+func die(ach: String):
 	PersistentData.unlock_achievement(ach)
 	get_node("/root/Root/CanvasLayer/LostUI").visible = true
-	(get_node("/root/Root/CanvasLayer/LostUI/Text") as Label).text = text
+	get_node("/root/Root/CanvasLayer/LostUI/" + ach).visible = true
 	get_node("/root/Root/CanvasLayer/StartingUI").visible = false
 	PersistentData.runs_since_right_click_ach += 1
 	PersistentData.is_right_click_run = PersistentData.runs_since_right_click_ach >= 5 and randi_range(0, 4) == 0
 	if PersistentData.is_right_click_run: PersistentData.runs_since_right_click_ach = 0
 
 	go_to_shop()
+
+func show_distance(text: String):
+	var root: LevelManager = get_node("/root/Root") as LevelManager
+	print("Bee threw at " + text + "m")
+	for l in range(text.length()):
+		var pos = text.length() - l
+		var digit = get_node("/root/Root/CanvasLayer/LostUI/THREW_BEE/Digit" + str(pos)) as TextureRect
+		digit.visible = true
+		digit.texture = root.digits[str_to_var(text[l])]
 
 func is_game_ongoing() -> bool:
 	return curr_state == game_state.PLAYING and not is_paused

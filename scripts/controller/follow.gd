@@ -7,5 +7,5 @@ var offset: Vector2
 func _ready() -> void:
 	offset = global_position - follow.global_position
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	global_position = follow.global_position + offset
