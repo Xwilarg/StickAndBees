@@ -36,6 +36,8 @@
 [ext_resource type="Texture2D" uid="uid://bqics8ijrvey5" path="res://game/sprites/zirk scans/asset_21.png" id="22_vxglm"]
 [ext_resource type="Texture2D" uid="uid://i3rwxjvsyqkg" path="res://game/sprites/zirk scans/asset_22.png" id="23_2f3dj"]
 [ext_resource type="Texture2D" uid="uid://bkwqg41hx3l0n" path="res://game/sprites/zirk scans/asset_32.png" id="24_yq6so"]
+[ext_resource type="AudioStream" uid="uid://drruel3pjlakm" path="res://game/audio/bgm.wav" id="37_pibwh"]
+[ext_resource type="Script" uid="uid://ccif44vcptfhg" path="res://scripts/bgm.gd" id="38_c6pm6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhunq"]
 radius = 42.86
@@ -521,5 +523,11 @@ cam = NodePath("../Camera2D")
 position = Vector2(-1163, 444)
 cam = NodePath("../Camera2D")
 
+[node name="BGM" type="AudioStreamPlayer2D" parent="." unique_id=1773197550]
+stream = ExtResource("37_pibwh")
+volume_db = 20.0
+script = ExtResource("38_c6pm6")
+
 [connection signal="body_entered" from="Beehive/Area2D" to="Beehive" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Apple" to="Apple" method="_on_body_entered"]
+[connection signal="finished" from="BGM" to="BGM" method="_on_finished"]
