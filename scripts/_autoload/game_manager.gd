@@ -38,7 +38,7 @@ func die(ach: String, text: String):
 	(get_node("/root/Root/CanvasLayer/LostUI/Text") as Label).text = text
 	get_node("/root/Root/CanvasLayer/StartingUI").visible = false
 	PersistentData.runs_since_right_click_ach += 1
-	PersistentData.is_right_click_run = PersistentData.runs_since_right_click_ach >= 5 and randi_range(0, 10) == 0
+	PersistentData.is_right_click_run = PersistentData.runs_since_right_click_ach >= 5 and randi_range(0, 4) == 0
 	if PersistentData.is_right_click_run: PersistentData.runs_since_right_click_ach = 0
 
 	go_to_shop()
