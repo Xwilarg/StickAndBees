@@ -4,6 +4,8 @@ var target: Node2D = null
 var go_up: Stick = null
 var go_down: Stick = null
 
+const cloud = preload("res://scenes/prefabs/cloud.tscn")
+
 func _process(delta: float) -> void:
 	if target != null:
 		global_position = target.global_position

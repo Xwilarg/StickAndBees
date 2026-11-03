@@ -30,7 +30,7 @@ func _process(delta: float) -> void:
 
 	elapsed += delta
 
-	if global_position.y < -5000 and camera.go_up == null:
+	if global_position.y < -5000 and camera.go_up == null and camera.go_down == null:
 		camera.go_up = self
 
 	if global_position.y < -20_000:

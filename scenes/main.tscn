@@ -63,6 +63,11 @@ position = Vector2(257, 6201)
 scale = Vector2(2, 2)
 texture = ExtResource("8_choun")
 
+[node name="RaisingLadder2" type="Sprite2D" parent="Follow" unique_id=928969449]
+position = Vector2(624, 11039)
+scale = Vector2(2, 2)
+texture = ExtResource("8_choun")
+
 [node name="RaiserSurface" type="Sprite2D" parent="Follow" unique_id=487917900]
 position = Vector2(39, 3383)
 texture = ExtResource("9_ya4ey")

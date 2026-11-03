@@ -6,4 +6,5 @@ extends RigidBody2D
 func _on_body_entered(body: Node) -> void:
 	collision_mask = 0
 	gravity_scale = 100.0
-	camera.go_down = stick
+	if camera.go_up == null:
+		camera.go_down = stick
